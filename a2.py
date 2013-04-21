@@ -67,7 +67,7 @@ class Maze:
         sprouts = 0
         for line in maze_str:
             for elem in line:
-                if elem is SPROUT:
+                if elem == SPROUT:
                     sprouts += 1
         self.num_sprouts_left = sprouts
 
