@@ -43,7 +43,7 @@ class Rat:
         self.num_sprouts_eaten = 0
 
     def __str__(self):
-        res = "Rat {0} at {1} ate {2} sprouts".format( self.symbol, (self.row,self.col) , self.num_sprouts_eaten ) 
+        res = "{0} at {1} ate {2} sprouts.".format( self.symbol, (self.row,self.col) , self.num_sprouts_eaten ) 
         return res
 
     def set_location(self, row, col):
@@ -63,7 +63,13 @@ class Maze:
         self.maze = maze_str
         self.rat_1 = rat_1
         self.rat_2 = rat_2
-        self.num_sprouts_left = 0
+
+        sprouts = 0
+        for line in maze_str:
+            for elem in line:
+                if elem is SPROUT:
+                    sprouts += 1
+        self.num_sprouts_left = sprouts
 
     def __str__(self):
         res = ""
