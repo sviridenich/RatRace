@@ -206,7 +206,7 @@ def main():
 
     root = Tkinter.Tk()
 
-    maze_filename = tkFileDialog.askopenfilename()
+    maze_filename = tkFileDialog.askopenfilename(filetypes=("txt .txt",))
     with open(maze_filename, 'r') as maze_file:
         maze_list = read_maze(maze_file)
 
